@@ -29,5 +29,6 @@ iteraciones N en caso de que no se alcance la precisión deseada , el valor de l
 deseada. El método deberá regresar la matriz $A_k$ una vez que esta tenga valores fuera de la
 diaognal menores que $ε$ o que se haya alcanzado el número máximo de iteraciones.
 Una vez programada la función, prueba con la
-matriz A del ejercicio 1, con tolerancia $ε=1×10−10$ y número máximo de iteraciones
-1000; extrae los valores de la diagonal de la
+matriz A del ejercicio 1, con tolerancia $ε=1×10^{−10}$ y número máximo de iteraciones
+1000; extraer los valores de la diagonal de la matriz resultante y compar con los
+eigenvalores calculados en el Ejercicio 1.
