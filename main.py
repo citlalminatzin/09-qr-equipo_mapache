@@ -2,10 +2,9 @@
 
 import collections
 import numbers
-
 from math import pi
-
 from linear_solver import solve
+from eigenvalues import eigenvals
 
 # linspace obtenido de (https://code.activestate.com/recipes/579000/)
 class linspace(collections.abc.Sequence):
@@ -47,7 +46,15 @@ class linspace(collections.abc.Sequence):
         return hash((type(self), self.start, self.stop, self.num))  
 
 def main():
-    ...
+  def main():
+    A = [
+        [5, -2],
+        [-2, 8]
+    ]
+    
+    vals = eigenvals(A, n=100)
+    
+    print("Eigenvalores aproximados:", vals)
 
 if __name__ == "__main__":
     main()
