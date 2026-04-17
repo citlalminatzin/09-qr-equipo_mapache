@@ -20,16 +20,17 @@ def eigenvals(A:list[list[float]], n:int = 100, tolerance=1e-10)->list[float]:
         
         Ak = matmul(R, Q)
         
-        off_diag_small = True
+        casi_diagonal = True
+        
         for i in range(len(Ak)):
             for j in range(len(Ak)):
                 if i != j and abs(Ak[i][j]) > tolerance:
-                    off_diag_small = False
+                    casi_diagonal = False
                     break
+            if not casi_diagonal:
+                break
         
-        if off_diag_small:
+        if casi_diagonal:
             break
     
-    eigenvalues = [Ak[i][i] for i in range(len(Ak))]
-    
-    return eigenvalues
+    return [Ak[i][i] for i in range(len(Ak))]
