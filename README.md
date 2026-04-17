@@ -1,7 +1,5 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=23589282)
-# Práctica 8. Cálculo de eigenvalores con el método QR.
-
-¡Adentrémonos en el increíble mundo del álgebra lineal numérica! OwO
+# Práctica 8. Cálculo de eigenvalores con el método QR
 
 ## Integrantes
 - Alba Pérez Paulina
@@ -10,11 +8,17 @@
 
 ## Uso e instalación
 
+-No se necesita instalar librerías externas.
+
+-Se necesita abrir la terminal y correr: python main.py
+
 ## Ejercicio 1. Cálculos Con el Polinomio Característico
 
 Por medio del método del polinomio característico, calcular los eigenvalores de la siguiente matriz.
 
 ![Matriz A](Imagenes/mat_A.png)
+
+![Calculo de los eigenvalores](Imagenes/eigenvalores.png)
 
 ## Ejercicio 2. El Método QR Simple
 
@@ -32,3 +36,5 @@ Una vez programada la función, prueba con la
 matriz A del ejercicio 1, con tolerancia $ε=1×10^{−10}$ y número máximo de iteraciones
 1000; extraer los valores de la diagonal de la matriz resultante y compar con los
 eigenvalores calculados en el Ejercicio 1.
+
+## Conclusión
