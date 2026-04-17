@@ -52,6 +52,7 @@ def main():
         [-2, 8]
     ]
 
+    # Otra matriz de ejemplo:
    # A = [
    # [4, 1, 1],
    # [1, 3, 0],
