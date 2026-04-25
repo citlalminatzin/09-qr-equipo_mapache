@@ -34,7 +34,11 @@ deseada. El método deberá regresar la matriz $A_k$ una vez que esta tenga valo
 diaognal menores que $ε$ o que se haya alcanzado el número máximo de iteraciones.
 Una vez programada la función, prueba con la
 matriz A del ejercicio 1, con tolerancia $ε=1×10^{−10}$ y número máximo de iteraciones
-1000; extraer los valores de la diagonal de la matriz resultante y compar con los
+1000; extraer los valores de la diagonal de la matriz resultante y comparar con los
 eigenvalores calculados en el Ejercicio 1.
 
 ## Conclusión
+
+Esta práctica nos ayudó a ver el uso del código QR de forma más completa y terminar de comparar con el método anterior LU, donde en este caso, puede generalizarse a matrices cuadradas simétricas más grandes. 
+
+Nos es útil para aprender a reutilizar código de prácticas pasadas con mayor naturalidad y entender el cambio de comportamiento cuando lo probamos en distintos casos.
