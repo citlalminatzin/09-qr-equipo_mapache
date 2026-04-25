@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
-"""
-Realiza la factorización QR de una matriz
-"""
+#Realiza la factorización QR de una matriz
 from gram_schmidt import transpose, dot, matmul, proj, normalize
 
 def qr(M:list[list[float]])->tuple[list[list[float]], list[list[float]]]:

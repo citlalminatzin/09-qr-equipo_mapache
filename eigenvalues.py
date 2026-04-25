@@ -6,12 +6,8 @@ from qr import qr
 from gram_schmidt import matmul
 
 def eigenvals(A:list[list[float]], n:int = 100, tolerance=1e-10)->list[float]:
-    """
-    Realiza n iteraciones del algoritmo QR para calcular 
-    los eigenvalores de A
-
-    Devuelve la estimación de los eigenvalores
-    """
+#Realiza n iteraciones del algoritmo QR para calcular los eigenvalores de A
+#Devuelve la estimación de los eigenvalores
     
     Ak = [row[:] for row in A]
     

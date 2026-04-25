@@ -30,12 +30,3 @@ def normalize(u:list[float])->list[float]:
     #Normaliza un vector
     n = norm(u)
     return [x / n for x in u]
-
-def matrix_to_str(matrix: list[list[float]])->str:
-    #Convierte una matriz a texto
-    s = [[str(e) for e in row] for row in matrix]
-    lens = [max(map(len, col)) for col in zip(*s)]
-    fmt = '\t'.join('{{:{}}}'.format(x) for x in lens)
-    table = [fmt.format(*row) for row in s]
-    # return '\n'.join(['\t'.join([str(cell) for cell in row]) for row in matrix])
-    return '\n'.join(table)
