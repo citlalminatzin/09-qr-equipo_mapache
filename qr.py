@@ -1,13 +1,32 @@
 #!/usr/bin/env python
 
-"""
-Realiza la factorización QR de una matriz
-"""
-
-from gram_schmidt import gm, transpose, dot
+#Realiza la factorización QR de una matriz
+from gram_schmidt import transpose, dot, matmul, proj, normalize
 
 def qr(M:list[list[float]])->tuple[list[list[float]], list[list[float]]]:
-    """Realiza la factorización QR de una matriz M"""
-    Q = ...
-    R = ...
+    #Realiza la factorización QR de una matriz M
+    cols = transpose(M)
+    n= len(cols)
+    Q_cols = []
+
+    for j, a in enumerate(cols):
+        #restamos las proyecciones de a sobre los q anteriores
+        u= list(a)
+        for q in Q_cols:
+            u = [ui - pi for ui, pi in zip(u, proj(a, q))]
+
+
+        Q_cols.append(normalize(u))
+
+    Q = transpose(Q_cols)
+    R = matmul(transpose(Q), M)
     return Q,R
+
+def qr_simple(A, N):
+    Ak = [row[:] for row in A]
+    
+    for _ in range(N):
+        Q, R = qr(Ak)
+        Ak = matmul(R, Q)
+    
+    return Ak

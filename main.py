@@ -1,20 +1,14 @@
 #!/usr/bin/env python
 
-import collections
+from collections.abc import Sequence
 import numbers
-
 from math import pi
 
-from linear_solver import solve
+from eigenvalues import eigenvals
+from qr import qr_simple
 
 # linspace obtenido de (https://code.activestate.com/recipes/579000/)
-class linspace(collections.abc.Sequence):
-    """linspace(start, stop, num) -> linspace object
-    
-    Return a virtual sequence of num numbers from start to stop (inclusive).
-    
-    If you need a half-open range, use linspace(start, stop, num+1)[:-1].
-    """
+class linspace(Sequence):
     
     def __init__(self, start, stop, num):
         if not isinstance(num, numbers.Integral) or num <= 1:
@@ -47,7 +41,33 @@ class linspace(collections.abc.Sequence):
         return hash((type(self), self.start, self.stop, self.num))  
 
 def main():
-    ...
+    A = [
+        [5, -2],
+        [-2, 8]
+    ]
+
+    # Otra matriz de ejemplo:
+   # A = [
+   # [4, 1, 1],
+   # [1, 3, 0],
+   # [1, 0, 2]
+   # ]
+
+    #Ejercicio 1
+    print("\n**** Ejercicio 1: Eigenvalores esperados ****")
+    vals = eigenvals(A, n=100)
+    print("Eigenvalores:", [round(v, 6) for v in vals])
+
+    #Ejercicio 2
+    print("\n**** Ejercicio 2: Método QR con n iteraciones ****")
+    Ak = qr_simple(A, 10)
+    print("Matriz final:", Ak)
+    print("Diagonal (eigenvalores):", [Ak[i][i] for i in range(len(Ak))])
+
+    #Ejercicio 3
+    print("\n**** Ejercicio 3: Método QR con tolerancia ****")
+    vals = eigenvals(A, n=1000, tolerance=1e-10)
+    print("Eigenvalores:", [round(v, 6) for v in vals])
 
 if __name__ == "__main__":
     main()
